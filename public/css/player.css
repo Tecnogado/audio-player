@@ -1,0 +1,229 @@
+#card__container {
+    min-width: 350px;
+    max-width: 700px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    box-shadow: 5px 5px 15px rgba(0,0,0,0.1);
+}
+
+@media (max-width: 600px) {
+    body {
+        display: block;
+    }
+    #card__container {
+        display: block;
+    }
+    #card__container #card {
+        max-width: 100%;
+        padding-bottom: 10px;
+        border-bottom: 1px solid #ddd;
+    }
+    #card__container #playlist {
+        overflow: hidden;
+        max-height: initial;
+    }
+}
+
+#card {
+    max-width: 350px;
+    max-height: 500px;
+    background: #fff;
+    
+}
+
+#card__img {
+    height: 200px;
+    position: relative;
+}
+
+#action__button {
+    cursor: pointer;
+    background: rgb(255, 149, 28);
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    position: absolute;
+    left: calc(100% - 72px);
+    top: calc(100% - 24px);
+}
+
+#action__button img {
+    width: 24px;
+    height: 24px;
+}
+
+#card__content {
+    margin-top: 15px;
+    padding: 15px 20px;
+}
+
+#card__title {
+    font-weight: bold;
+    font-size: 18px;
+    color: #333;
+}
+
+#card__artist {
+    margin: 10px 0 15px;
+}
+
+#card__artist a, .playlist__artist {
+    text-decoration: none;
+    font-size: 14px;
+    color: #888;
+    transition: all 0.4s ease-out;
+}
+
+#card__artist a:hover {
+    color: rgb(255, 149, 28);
+}
+
+#controls__container {
+    width: 100%;
+    margin-top: 25px;
+    display: flex;
+}
+
+#progress__container {
+    width: 80%;
+    max-width: 250px;
+    margin-right: 10px;
+    display: flex;
+    align-items: center;
+}
+
+#progress__container div {
+    font-size: 12px;
+    color: #666;
+}
+
+#progress__container input {
+    width: 100%;
+    max-width: 140px;
+    margin: 0 10px 0;
+}
+
+#volume__container {
+    display: flex;
+    align-items: center;
+}
+
+#volume__container img {
+    cursor: pointer;
+    width: 24px;
+    height: 24px;
+}
+
+#volume__container input {
+    max-width: 50px;
+    margin-left: 10px;
+}
+
+#volume__bar, #progress__bar {
+    -webkit-appearance: none;
+    height: 4px;
+    background: #d3d3d3;
+    cursor: pointer;
+    border-radius: 2px;
+}
+
+#volume__bar::-webkit-slider-thumb,
+#progress__bar::-webkit-slider-thumb{
+    -webkit-appearance: none;
+    appearance: none;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: rgb(255, 149, 28);
+    cursor: pointer;
+}
+
+#volume__bar::-moz-range-thumb,
+#progress__bar::-moz-range-thumb{
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: rgb(255, 149, 28);
+    border: 0;
+    cursor: pointer;
+}
+
+#playlist {
+    background: #fff;
+    list-style-type: none;
+    overflow: hidden;
+    overflow-y: scroll;
+    max-height: 350px;
+}
+
+#playlist::-webkit-scrollbar {
+    width: 5px;
+}
+
+#playlist::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+#playlist::-webkit-scrollbar-thumb {
+    background: #c0c0c0;
+}
+
+#playlist::-webkit-scrollbar-thumb:hover {
+    background: #888;
+}
+
+#playlist__name {
+    width: 100%;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    padding: 5px 20px;
+    color: #fff;
+    font-weight: bold;
+    font-size: 16px;
+    background: #333;
+}
+
+#playlist__name img {
+    width: 24px;
+    height: 24px;
+    margin-right: 10px;
+}
+
+.playlist__card {
+    width: 100%;
+    height: 50px;
+    border: 1px solid #ddd;
+    display: flex;
+    padding: 5px 20px;
+    align-items: center;
+    transition: all 0.4s ease-out;
+    user-select: none;
+}
+
+.playlist__card--active {
+    background: #ddd;
+    border: 0;
+}
+
+.playlist__card:hover {
+    background: #c0c0c0;
+    cursor: pointer;
+}
+
+.playlist__img {
+    width: 40px;
+    height: 40px;
+    background: url('https://picsum.photos/100') no-repeat center center / cover;
+    margin-right: 20px;
+}
+
+.playlist__title {
+    font-weight: bold;
+    font-size: 16px;
+    color: #555;
+}

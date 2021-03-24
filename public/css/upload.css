@@ -1,0 +1,37 @@
+form {
+    box-shadow: 5px 5px 15px 0 rgba(0,0,0,0.1);
+    background: #fff;
+    padding: 15px 30px;
+    width: 100%;
+    max-width: 400px;
+}
+
+form h2 {
+    margin-bottom: 10px;
+}
+
+form div {
+    width: 100%;
+    display: grid;
+    gap: 5px 10px;
+    grid-template-columns: 1fr 5fr;
+    border: 0;
+}
+
+form div input {
+    width: 100%;
+    max-width: 700px;
+}
+
+form button[type=submit] {
+    margin-top: 15px;
+    width: 100%;
+    border: 0;
+    background: rgb(255, 149, 28);
+    color: #fff;
+    font-weight: bold;
+    border-radius: 2px;
+    cursor: pointer;
+    font-size: 14px;
+    padding: 10px 15px;
+}

@@ -1,0 +1,20 @@
+{
+  "name": "audio-player",
+  "version": "1.1.0",
+  "main": "index.js",
+  "repository": "https://github.com/Tecnogado/audio-player.git",
+  "author": "Carlos <carlos.pessoal@hotmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "dev": "nodemon server.js",
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "multer": "^1.4.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.2"
+  }
+}

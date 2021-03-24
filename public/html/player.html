@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Player de Aúdio</title>
+    <base href="/">
+    <link rel="stylesheet" type="text/css" href="/pages/player/styles.css">
+</head>
+<body>
+    <div id="card__container">
+        <div id="card">
+            <div id="card__img">
+                <div id="action__button"><img src="/assets/play-icon.svg" alt=""></div>
+            </div>
+            <div id="card__content">
+                <h2 id="card__title" max='22'></h2>
+                <p id="card__artist"><a href="#"></a></p>
+                <div id="controls__container">
+                    <div id="progress__container">
+                        <div id="current__progress">00:00</div>
+                        <input id="progress__bar" value="0" type="range" min="0" max="0">
+                        <div id="total__progress">00:00</div>
+                    </div>
+                    <div id="volume__container">
+                        <img src="/assets/volume-up-icon.svg" alt="">
+                        <input type="range" value="100" id="volume__bar" min="0" max="100">
+                    </div>
+                </div>
+                <audio src="" id="card__audio">
+            </div>
+        </div>
+        <div id="playlist">
+            <div id="playlist__name"><img src="/assets/playlist-icon.svg" alt=""><p></p></div>
+            <ul id="playlist__list"></ul>
+        </div>
+    </div>
+    <script type="module">
+        import { loadJSON } from '../../js/utils.js';
+        import playerData from '../../js/playerData.js';
+
+        async function startPlayer() {
+            const database = await loadJSON('files/database.json');
+            playerData.start(database);
+        }
+        
+        document.addEventListener('load', startPlayer());
+    </script>
+</body>
+</html>
