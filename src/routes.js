@@ -1,28 +1,27 @@
-const path = require('path');
+const { resolve } = require('path');
 const express = require('express');
 const routes = new express.Router();
 
-const multer = require('multer');
-const uploadConfig = require('./uploadConfig');
-const upload = multer(uploadConfig);
-const handleUpload = require('./src/js/handleUpload');
+const { readFileSync } = require('fs');
+const upload = require('multer')(require('./uploadConfig'));
+const handleUpload = require('./handleUpload');
 
-routes.get('/', (req,res) => {
-    res.sendFile(path.resolve('src/pages/home/index.html'));
-})
+routes.get('/files', (req, res) => {
+  const database = JSON.parse(
+    readFileSync(resolve(__dirname, 'songs', 'database.json'))
+  );
+  res.status(200).json(database);
+});
 
-routes.get('/player', (req,res) => {
-    res.sendFile(path.resolve('src/pages/player/index.html')); 
-})
+const pagesFolder = resolve(__dirname, '..', 'public', 'html');
 
-routes.get('/upload', (req,res) => {
-    res.sendFile(path.resolve('src/pages/upload/index.html'));
-})
+routes.get('/', (req, res) => res.sendFile(`${pagesFolder}/home.html`));
+routes.get('/player', (req, res) => res.sendFile(`${pagesFolder}/player.html`));
+routes.get('/upload', (req, res) => res.sendFile(`${pagesFolder}/upload.html`));
 
-routes.post('/upload', upload.any(), async (req,res) => {
-    handleUpload.save(req.files, req.body.title, req.body.artist);
-    if (req.connection.localAddress.split(':').length < 4) res.redirect(`http://localhost:5500/player`);
-    else res.redirect(`http://${req.connection.localAddress.split(':')[3]}:5500/player`);
+routes.post('/upload', upload.any(), (req, res) => {
+  handleUpload.save(req.files, req.body.title, req.body.artist);
+  return res.status(200).json({ upload: true });
 });
 
 module.exports = routes;

@@ -1,3 +1,15 @@
 {
-  "data": []
+  "albums": [
+    {
+      "album": "Example",
+      "audios": [
+        {
+          "title": "Title",
+          "artist": "Artist",
+          "cover": "Cover.jpg",
+          "file": "Song Name.mp3"
+        }
+      ]
+    }
+  ]
 }

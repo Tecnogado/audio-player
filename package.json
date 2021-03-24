@@ -6,8 +6,8 @@
   "author": "Carlos <carlos.pessoal@hotmail.com>",
   "license": "MIT",
   "scripts": {
-    "dev": "nodemon server.js",
-    "start": "node server.js"
+    "start": "node src/server.js",
+    "dev": "nodemon src/server.js -e js,html,css"
   },
   "dependencies": {
     "cors": "^2.8.5",
