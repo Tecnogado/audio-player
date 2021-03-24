@@ -22,9 +22,11 @@ If you use npm, run this instead:
 $ npm install
 $ npm run start
 ```
-Then open it in `localhost:5500/player` or `YOUR_IP:3000/player`.
+Update the `info.json` file under the *public/js/* folder, and make a copy of the `database.example.json` to `database.json` on the *src/songs/* folder.
 
-To upload songs and covers you will need to open `localhost:3000/upload` or `YOUR_IP:5500/upload`, fill in the inputs and submit the files.
+Then open it in `localhost:3000/player` or `YOUR_IP:3000/player`.
+
+To upload songs and covers you will need to open `localhost:3000/upload` or `YOUR_IP:3000/upload`, fill in the inputs and submit the files.
 
 ## To do list
 - [x] Implement the system of songs management;
