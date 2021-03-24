@@ -1,26 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Player de Áudio</title>
-    <base href="/">
-    <link rel="stylesheet" href="/pages/upload/styles.css">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="stylesheet" href="/css/upload.css">
+  <script defer src="js/vendor/axios.min.js"></script>
+  <script defer src="/js/pages/Upload.js" type="module"></script>
+  <title>Player de Áudio</title>
 </head>
 <body>
-    <form id="upload__form" method="POST" enctype="multipart/form-data" action="/upload">
-        <h2>Upload</h1>
-        <div>
-            <label for="title__form">Título</label>
-            <input type="text" id="title__form" name="title" required>
-            <label for="artist__form">Artista</label>
-            <input type="text" id="artist__form" name="artist" required>
-            <label for="cover__form">Cover</label>
-            <input type="file" id="cover__form" name="cover">
-            <label for="file__form">File</label>
-            <input type="file" id="file__form" name="file" required>
-        </div>
-        <button type="submit">Enviar</button>
-    </form>
+  <form id="upload__form">
+    <h2>Upload</h1>
+    <div>
+      <label for="title__form">Título</label>
+      <input type="text" id="title__form" name="title" required>
+      <label for="artist__form">Artista</label>
+      <input type="text" id="artist__form" name="artist" required>
+      <label for="cover__form">Cover</label>
+      <input type="file" id="cover__form" name="cover" accept="image/*">
+      <label for="file__form">File</label>
+      <input type="file" id="file__form" name="file" accept="audio/*" required>
+    </div>
+    <button type="submit">Enviar</button>
+  </form>
 </body>
 </html>

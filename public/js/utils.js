@@ -1,19 +1,10 @@
-const secondsToMinutes = (time) => {
-    const minutes = Math.floor(time / 60);
-    const seconds = Math.floor(time % 60);
-    return `${("0" + minutes).slice(-2)}:${("0" + seconds).slice(-2)}`;
-}
+export function secondsToMinutes(time) {
+  const minutes = Math.floor(time / 60);
+  const seconds = Math.floor(time % 60);
+  return `${('0' + minutes).slice(-2)}:${('0' + seconds).slice(-2)}`;
+};
 
-const path = (file) => {
-    return `files/${file}`;
+export async function getInfo() {
+  const { data } = await axios.get('js/info.json');
+  return data;
 }
-
-const loadJSON = async function(path) {   
-    const data = await fetch(path)
-        .then(response => {
-            return response.json();
-        });
-    return data;
-}
-
-export { secondsToMinutes, loadJSON, path};
